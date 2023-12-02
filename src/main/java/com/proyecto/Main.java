@@ -17,7 +17,7 @@ public class Main {
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
             properties.load(inputStream);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error al leer el archivo de propiedades.");
         }
     }
 
@@ -38,7 +38,7 @@ public class Main {
                 logger.info("Contraseña inválida");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error al encriptar contraseña.");
         }
     }
 }
